@@ -38,6 +38,10 @@ pipeline {
                 stage('Start Frontend'){
                     steps{
                         sh 'cd ./frontend-sit-forum-app && npm install'
+                        sh 'export PORT=$PORT'
+                        sh 'export DB_URI=$DB_URI'
+                        sh 'export JWT_SECRET=$JWT_SECRET'
+                        sh 'export NODE_ENV=$NODE_ENV'
                         sh 'cd ./frontend-sit-forum-app && export DANGEROUSLY_DISABLE_HOST_CHECK=$DANGEROUSLY_DISABLE_HOST_CHECK'
                         sh 'cd ./frontend-sit-forum-app && export REACT_APP_API=$REACT_APP_API'
                         sh 'cd ./frontend-sit-forum-app && npm start'
