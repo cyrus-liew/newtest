@@ -6,17 +6,6 @@ pipeline {
         }
     }
 
-	//tools {nodejs 'NodeJS'}
-
-	environment {
-        PORT = credentials('port')
-        DB_URI = credentials('DB_URI')
-        JWT_SECRET = credentials('JWT_SECRET')
-        NODE_ENV = credentials('NODE_ENV')
-        DANGEROUSLY_DISABLE_HOST_CHECK=credentials('DANGEROUSLY_DISABLE_HOST_CHECK')
-        REACT_APP_API = credentials('REACT_APP_API')
-    }
-
 	stages {
 		//stage('Backend Tests') {
 		    //steps{
